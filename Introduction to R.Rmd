@@ -72,6 +72,7 @@ print(mat1)
 
 ```{r }
 emp_status <- factor(c("Employed","Employed","Unemployed","Self-Employed","Unemployed","Employed","Unemployed","Self-Employed","Self-Employed"),levels = c("Employed","Unemployed","Self-Employed"))
+print(emp_status)
 ```
 
 
