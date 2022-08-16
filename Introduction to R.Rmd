@@ -29,10 +29,7 @@ print(vector1)
 
 
 ```{r }
-name = NULL
-for(x in vector1){
-     name = paste(name,x,sep="")
-}
+name = paste(vector1,collapse = "")
 print(name)
 ```
 
@@ -111,7 +108,7 @@ unclass(emp_status)
 
 
 ```{r }
-bank_customers <- data.frame(CustomerID=101:105,hasAccount=c(FALSE,TRUE,TRUE,TRUE,FALSE),totalBalance= c(NA,10000,100,2000,NA))
+bank_customers <- data.frame(CustomerID=101:105,hasAccount=c(FALSE,TRUE,TRUE,TRUE,NA),totalBalance= c(NA,10000,0,2000,NA))
 row.names(bank_customers)<-c("Alicia","Nancy","Fernando","Louis","Diane")
 print(bank_customers)
 ```
