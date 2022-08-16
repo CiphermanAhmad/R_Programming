@@ -24,26 +24,36 @@ output: html_document
 
 ```{r }
 vector1 <- c("a","h","m","a","d")
+print(vector1)
 ```
 
 
 ```{r }
-
+name = NULL
+for(x in vector1){
+     name = paste(name,x,sep="")
+}
+print(name)
 ```
 
 
 ```{r }
-
+var1 <- 100:120
+print(var1)
 ```
 
 
 ```{r }
-
+numbers <- seq(from = 2, to = 18, by = 2)
+mat1 = matrix(numbers,nrow = 3,ncol=3)
+print(mat1)
 ```
 
 
 ```{r }
-
+row.names(mat1) <- c("r1","r2","r3")
+colnames(mat1) <- c("c1","c2","c3")
+print(mat1)
 ```
 
 
