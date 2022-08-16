@@ -23,7 +23,7 @@ output: html_document
 
 
 ```{r }
-#### Start solution ####
+vector1 <- c("a","h","m","a","d")
 ```
 
 
