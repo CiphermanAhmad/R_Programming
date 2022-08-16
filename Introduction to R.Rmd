@@ -111,22 +111,24 @@ unclass(emp_status)
 
 
 ```{r }
-
+bank_customers <- data.frame(CustomerID=101:105,hasAccount=c(FALSE,TRUE,TRUE,TRUE,FALSE),totalBalance= c(NA,10000,100,2000,NA))
+row.names(bank_customers)<-c("Alicia","Nancy","Fernando","Louis","Diane")
+print(bank_customers)
 ```
 
 
 ```{r }
-
+nrow(bank_customers)
 ```
 
 
 ```{r }
-
+ncol(bank_customers)
 ```
 
 
 ```{r }
-
+dimnames(bank_customers)
 ```
 
 
