@@ -1,0 +1,1236 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Introduction to R Programming},
+  pdfauthor={AHMAD RAZA},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Introduction to R Programming}
+\author{AHMAD RAZA}
+\date{September 14, 2022}
+
+\begin{document}
+\maketitle
+
+\hypertarget{note}{%
+\subparagraph{NOTE:}\label{note}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Change author name and date to your exercise submission date in above
+  section
+\item
+  Your code MUST execute without any errors.
+\item
+  You can add more lines in your code as required.
+\end{enumerate}
+
+\hypertarget{section-1-data-types-and-operations-pt.-1}{%
+\subsection{Section 1: Data Types and Operations Pt.
+1}\label{section-1-data-types-and-operations-pt.-1}}
+
+\hypertarget{question-1}{%
+\subsubsection{Question 1}\label{question-1}}
+
+\textbf{Create the variables with the following composition:}\\
+1. A vector containing each letter of your first name as its elements.\\
+2. A variable that contains your name concatenated from the vector
+created in (1)\\
+3. A variable containing a sequence from 100 to 120.\\
+4. Create a matrix of 3x3 dimensions that contains the even sequence of
+numbers starting from 2.\\
+5. Assign names to the variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vector1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{,}\StringTok{"h"}\NormalTok{,}\StringTok{"m"}\NormalTok{,}\StringTok{"a"}\NormalTok{,}\StringTok{"d"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(vector1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a" "h" "m" "a" "d"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{name }\OtherTok{=} \FunctionTok{paste}\NormalTok{(vector1,}\AttributeTok{collapse =} \StringTok{""}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(name)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "ahmad"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{var1 }\OtherTok{\textless{}{-}} \DecValTok{100}\SpecialCharTok{:}\DecValTok{120}
+\FunctionTok{print}\NormalTok{(var1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118
+## [20] 119 120
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numbers }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{2}\NormalTok{, }\AttributeTok{to =} \DecValTok{18}\NormalTok{, }\AttributeTok{by =} \DecValTok{2}\NormalTok{)}
+\NormalTok{mat1 }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(numbers,}\AttributeTok{nrow =} \DecValTok{3}\NormalTok{,}\AttributeTok{ncol=}\DecValTok{3}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(mat1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    2    8   14
+## [2,]    4   10   16
+## [3,]    6   12   18
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{row.names}\NormalTok{(mat1) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"r1"}\NormalTok{,}\StringTok{"r2"}\NormalTok{,}\StringTok{"r3"}\NormalTok{)}
+\FunctionTok{colnames}\NormalTok{(mat1) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"c1"}\NormalTok{,}\StringTok{"c2"}\NormalTok{,}\StringTok{"c3"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(mat1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    c1 c2 c3
+## r1  2  8 14
+## r2  4 10 16
+## r3  6 12 18
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2}{%
+\subsubsection{Question 2}\label{question-2}}
+
+\textbf{Create a factor variable emp\_status:}\\
+1. Containing the categorical variables: Employed, Unemployed,
+Self-Employed, with each level appearing atleast more than 2.\\
+2. Display the levels and the factor variable as a table.\\
+3. Unclass the elements of the factor variable.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{emp\_status }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"Employed"}\NormalTok{,}\StringTok{"Employed"}\NormalTok{,}\StringTok{"Unemployed"}\NormalTok{,}\StringTok{"Self{-}Employed"}\NormalTok{,}\StringTok{"Unemployed"}\NormalTok{,}\StringTok{"Employed"}\NormalTok{,}\StringTok{"Unemployed"}\NormalTok{,}\StringTok{"Self{-}Employed"}\NormalTok{,}\StringTok{"Self{-}Employed"}\NormalTok{),}\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Employed"}\NormalTok{,}\StringTok{"Unemployed"}\NormalTok{,}\StringTok{"Self{-}Employed"}\NormalTok{))}
+\FunctionTok{print}\NormalTok{(emp\_status)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] Employed      Employed      Unemployed    Self-Employed Unemployed   
+## [6] Employed      Unemployed    Self-Employed Self-Employed
+## Levels: Employed Unemployed Self-Employed
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(emp\_status)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## emp_status
+##      Employed    Unemployed Self-Employed 
+##             3             3             3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{unclass}\NormalTok{(emp\_status)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 2 3 2 1 2 3 3
+## attr(,"levels")
+## [1] "Employed"      "Unemployed"    "Self-Employed"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-3}{%
+\subsubsection{Question 3}\label{question-3}}
+
+\textbf{Create a dataframe object called bank\_customers:}\\
+1. the data frame will have three columns: CustomerID, hasAccount,
+totalBalance\\
+2. Fill the data as follows\\
+a. Alicia does not have an account. She is here for inquiry\\
+b. Nancy is here to check on her account balance of USD 10,000.\\
+c.~Fernando is here to deposit USD 100 in his account which had no
+balance.\\
+d.~Louis will withdraw all his money from the account that had USD
+2,000.\\
+e. Diane is here for information.\\
+3. For customers that do not have a value, use NA as placeholder.\\
+4. Print the number of rows, columns and names for the data frame.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bank\_customers }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{CustomerID=}\DecValTok{101}\SpecialCharTok{:}\DecValTok{105}\NormalTok{,}\AttributeTok{hasAccount=}\FunctionTok{c}\NormalTok{(}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{NA}\NormalTok{),}\AttributeTok{totalBalance=} \FunctionTok{c}\NormalTok{(}\ConstantTok{NA}\NormalTok{,}\DecValTok{10000}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{2000}\NormalTok{,}\ConstantTok{NA}\NormalTok{))}
+
+\FunctionTok{row.names}\NormalTok{(bank\_customers)}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Alicia"}\NormalTok{,}\StringTok{"Nancy"}\NormalTok{,}\StringTok{"Fernando"}\NormalTok{,}\StringTok{"Louis"}\NormalTok{,}\StringTok{"Diane"}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(bank\_customers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          CustomerID hasAccount totalBalance
+## Alicia          101      FALSE           NA
+## Nancy           102       TRUE        10000
+## Fernando        103       TRUE            0
+## Louis           104       TRUE         2000
+## Diane           105         NA           NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#new record added}
+\CommentTok{\#newEmployee \textless{}{-} data.frame(CustomerID=106,hasAccount=TRUE,totalBalance=500)}
+\CommentTok{\#rbind(bank\_customers,newEmployee)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(bank\_customers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ncol}\NormalTok{(bank\_customers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dimnames}\NormalTok{(bank\_customers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "Alicia"   "Nancy"    "Fernando" "Louis"    "Diane"   
+## 
+## [[2]]
+## [1] "CustomerID"   "hasAccount"   "totalBalance"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{good-job-you-have-successfully-completed-the-section}{%
+\subsubsection{Good Job! You have successfully completed the
+section!}\label{good-job-you-have-successfully-completed-the-section}}
+
+\hypertarget{section-2-control-structures}{%
+\subsection{Section 2: Control
+Structures}\label{section-2-control-structures}}
+
+\hypertarget{question-1-1}{%
+\subsubsection{Question 1}\label{question-1-1}}
+
+\textbf{Create a variable containing a sequence of numbers from 1 to
+100:}\\
+1. Iterate over the variables and print those numbers which are prime.
+
+\textbf{Create a variable var with a value of 1:}\\
+1. Create a while loop and increase the value of var at each
+iteration.\\
+2. When you reach the 10th prime number, terminate the loop and print
+the number.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Question 1(a)}
+\NormalTok{getPrimeNumbers }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(var2)\{}
+     
+\NormalTok{   primeMarker}\OtherTok{=} \ConstantTok{TRUE}  
+\NormalTok{   var3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{()}
+   \ControlFlowTok{for}\NormalTok{ (x }\ControlFlowTok{in}\NormalTok{ var2)\{}
+     \ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)\{}
+\NormalTok{          var3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(var3,x)}
+          \ControlFlowTok{next}
+\NormalTok{     \}}
+     \ControlFlowTok{for}\NormalTok{ (y }\ControlFlowTok{in}\NormalTok{ var2)\{}
+          \ControlFlowTok{if}\NormalTok{(y }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)}\ControlFlowTok{next}
+          \ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{(x }\SpecialCharTok{==}\NormalTok{ y)}\ControlFlowTok{next}
+          
+          \ControlFlowTok{if}\NormalTok{ ( x }\SpecialCharTok{\%\%}\NormalTok{ y }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)\{}
+\NormalTok{               primeMarker }\OtherTok{=} \ConstantTok{FALSE}
+               \ControlFlowTok{break}\NormalTok{\}}
+          \ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{               primeMarker}\OtherTok{=} \ConstantTok{TRUE}
+               
+\NormalTok{          \}}
+          
+\NormalTok{     \} }
+     
+     \ControlFlowTok{if}\NormalTok{(primeMarker }\SpecialCharTok{==} \ConstantTok{TRUE}\NormalTok{)\{}
+          \CommentTok{\# vector concatenation}
+\NormalTok{          var3 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(var3,x)}
+\NormalTok{          primeMarker }\SpecialCharTok{==} \ConstantTok{FALSE}
+\NormalTok{     \}}
+\NormalTok{   \}}
+\NormalTok{   var3}
+\NormalTok{\}}
+\NormalTok{var2 }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100}
+\NormalTok{result }\OtherTok{=} \FunctionTok{getPrimeNumbers}\NormalTok{(var2)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Prime Numbers are: "}\NormalTok{,result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Prime Numbers are:  1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Question 1 (b)}
+\NormalTok{getithPrimeNumber }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(var,check)\{}
+     \ControlFlowTok{while}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{)\{}
+\NormalTok{          primeNumbers }\OtherTok{=} \FunctionTok{getPrimeNumbers}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{var))}
+\NormalTok{          length }\OtherTok{=} \FunctionTok{length}\NormalTok{(primeNumbers)}
+          \ControlFlowTok{if}\NormalTok{(length }\SpecialCharTok{==}\NormalTok{ check)\{}
+               \ControlFlowTok{break}
+\NormalTok{          \}}
+\NormalTok{          var }\OtherTok{=}\NormalTok{ var }\SpecialCharTok{+} \DecValTok{1}
+     
+\NormalTok{     \}}
+     \CommentTok{\# return }
+\NormalTok{     primeNumbers[length]}
+\NormalTok{\}}
+
+\CommentTok{\# Use Custom Function}
+\NormalTok{var }\OtherTok{=} \DecValTok{1}
+\NormalTok{check }\OtherTok{=} \DecValTok{10}
+\NormalTok{result }\OtherTok{=} \FunctionTok{getithPrimeNumber}\NormalTok{(var,check)}
+\FunctionTok{cat}\NormalTok{(check,}\StringTok{"th Prime Number is:"}\NormalTok{,result,}\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 10th Prime Number is:23
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2-1}{%
+\subsubsection{Question 2}\label{question-2-1}}
+
+\textbf{Create a matrix of size 3x3 called mat\_1:}\\
+1. Iterate over all the values one by one and print the element as well
+as the position in the matrix (row, col)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create Matrix 3x3}
+\NormalTok{mat\_1 }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{9}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# print matrix by elements}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \FunctionTok{seq\_len}\NormalTok{(}\FunctionTok{nrow}\NormalTok{(mat\_1)))\{}
+     \ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \FunctionTok{seq\_len}\NormalTok{(}\FunctionTok{ncol}\NormalTok{(mat\_1)))\{}
+          \FunctionTok{cat}\NormalTok{(}\StringTok{"Element at Position ("}\NormalTok{,i,}\StringTok{","}\NormalTok{,j,}\StringTok{") is :"}\NormalTok{,mat\_1[i,j],}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{     \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Element at Position ( 1 , 1 ) is : 1 
+## Element at Position ( 1 , 2 ) is : 4 
+## Element at Position ( 1 , 3 ) is : 7 
+## Element at Position ( 2 , 1 ) is : 2 
+## Element at Position ( 2 , 2 ) is : 5 
+## Element at Position ( 2 , 3 ) is : 8 
+## Element at Position ( 3 , 1 ) is : 3 
+## Element at Position ( 3 , 2 ) is : 6 
+## Element at Position ( 3 , 3 ) is : 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{good-job-you-have-successfully-completed-the-section-1}{%
+\subsubsection{Good Job! You have successfully completed the
+section!}\label{good-job-you-have-successfully-completed-the-section-1}}
+
+\hypertarget{section-3-functions}{%
+\subsection{Section 3: Functions}\label{section-3-functions}}
+
+\hypertarget{question-1-2}{%
+\subsubsection{Question 1}\label{question-1-2}}
+
+\textbf{Create a function called gcd that finds the greatest common
+divisor of two numbers a and b:}\\
+1. a and b, should be taken as input.\\
+2. The function must print the GCD as well as return it.\\
+3. The output must be saved in a variable called answer.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gcd }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(a,b)\{}
+     \ControlFlowTok{if}\NormalTok{(a}\SpecialCharTok{\textless{}}\NormalTok{b) smaller }\OtherTok{=}\NormalTok{ a    }
+     \ControlFlowTok{else}\NormalTok{ smaller }\OtherTok{=}\NormalTok{ b}
+
+     \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{smaller) \{}
+          \ControlFlowTok{if}\NormalTok{((a }\SpecialCharTok{\%\%}\NormalTok{ i }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{\&\&}\NormalTok{ (b }\SpecialCharTok{\%\%}\NormalTok{ i }\SpecialCharTok{==} \DecValTok{0}\NormalTok{))\{}
+\NormalTok{               hcf }\OtherTok{=}\NormalTok{ i}
+\NormalTok{          \}}
+\NormalTok{     \}}
+     
+     \FunctionTok{cat}\NormalTok{(}\StringTok{"Greatest Common Divisor:"}\NormalTok{,hcf)}
+     \FunctionTok{return}\NormalTok{(hcf)}
+\NormalTok{\}}
+\NormalTok{num1 }\OtherTok{=} \DecValTok{72}
+\NormalTok{num2 }\OtherTok{=} \DecValTok{120}
+\NormalTok{answer }\OtherTok{=} \FunctionTok{gcd}\NormalTok{(num2,num1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Greatest Common Divisor: 24
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2-2}{%
+\subsubsection{Question 2}\label{question-2-2}}
+
+\textbf{Create a function called allConditionsMeet, that checks whether
+two expressions evaluate to true:}\\
+1. a and b, should be taken as input.\\
+2. the function should check if a and b, both conditions, evaluate to
+True.\\
+3. The function must returns a boolean value.\\
+4. Using a method, print the arguments that function takes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{allConditionsMeet }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(a,b)\{}
+
+     \ControlFlowTok{if}\NormalTok{((a }\SpecialCharTok{==} \ConstantTok{TRUE}\NormalTok{)}\SpecialCharTok{\&\&}\NormalTok{(b}\SpecialCharTok{==}\ConstantTok{TRUE}\NormalTok{))\{}
+          \FunctionTok{return}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{     \}}
+\NormalTok{\}}
+\NormalTok{exp1 }\OtherTok{=} \DecValTok{2} \SpecialCharTok{\textless{}} \DecValTok{5}
+\NormalTok{exp2 }\OtherTok{=} \DecValTok{5} \SpecialCharTok{\textgreater{}=} \DecValTok{0}
+\NormalTok{result }\OtherTok{=} \FunctionTok{allConditionsMeet}\NormalTok{(exp1,exp2)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Result is:"}\NormalTok{,result,}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Result is: TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"Arguments:"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Arguments:"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{formals}\NormalTok{(allConditionsMeet))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $a
+## 
+## 
+## $b
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{good-job-you-have-successfully-completed-the-section-2}{%
+\subsubsection{Good Job! You have successfully completed the
+section!}\label{good-job-you-have-successfully-completed-the-section-2}}
+
+\hypertarget{section-4-vectorized-operations}{%
+\subsection{Section 4: Vectorized
+Operations}\label{section-4-vectorized-operations}}
+
+\hypertarget{question-1-3}{%
+\subsubsection{Question 1}\label{question-1-3}}
+
+\textbf{Create two matrices matrix\_1 and matrix\_2 of dimensions 2x3
+and 3x2:}\\
+1. Perform element-wise multiplication.\\
+2. Perform matrix multipilcation.
+
+\textbf{Create a 2x2 matrix my\_mat:}\\
+1. Write a function to find the determinant of the matrix.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Create Matrices}
+\NormalTok{matrix\_1 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{matrix\_2 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\NormalTok{matrix\_1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matrix\_2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# element{-}wise multiplication}
+\CommentTok{\#elements = c()}
+\CommentTok{\#for (i in seq\_len(nrow(matrix\_1)))\{}
+\CommentTok{\#     a = c(matrix\_1[i,]) * c(matrix\_2[i,])}
+\CommentTok{\#     elements \textless{}{-} c(elements,a)}
+\CommentTok{\#\}}
+\CommentTok{\#elementWiseMultiplication = matrix(elements,2,3)}
+\CommentTok{\#elementWiseMultiplication}
+
+\CommentTok{\# approach 2:}
+\NormalTok{element\_mat }\OtherTok{=} \FunctionTok{c}\NormalTok{(matrix\_1) }\SpecialCharTok{*} \FunctionTok{c}\NormalTok{(matrix\_2)}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(element\_mat,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    9   25
+## [2,]    4   16   36
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# approach 3:}
+\CommentTok{\#print("Element Wise Multiplication: ",matrix\_1 * matrix\_2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# matrix multiplication}
+\NormalTok{matrixMultiplication }\OtherTok{=}\NormalTok{ matrix\_1 }\SpecialCharTok{\%*\%}\NormalTok{ matrix\_2}
+\NormalTok{matrixMultiplication}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]   22   49
+## [2,]   28   64
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# determinant of matrix}
+\NormalTok{matrix\_3 }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\DecValTok{5}\SpecialCharTok{:}\DecValTok{8}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\NormalTok{matrix\_3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    5    7
+## [2,]    6    8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{det}\NormalTok{(matrix\_3))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{good-job-you-have-successfully-completed-the-section-3}{%
+\subsubsection{Good Job! You have successfully completed the
+section!}\label{good-job-you-have-successfully-completed-the-section-3}}
+
+\hypertarget{section-5-date-and-time-in-r}{%
+\subsection{Section 5: Date and Time in
+R}\label{section-5-date-and-time-in-r}}
+
+\hypertarget{question-1-4}{%
+\subsubsection{Question 1}\label{question-1-4}}
+
+\textbf{Use the current date and time and store them into variables
+curr\_date and curr\_time respectively: {[}use sys{]}}\\
+1. Convert both into date and time objects using the appropriate
+functions.\\
+2. Print the weekday, year, second and hour using the appropriate
+function and variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# get date \& time}
+\NormalTok{curr\_time }\OtherTok{=} \FunctionTok{Sys.time}\NormalTok{()}
+\NormalTok{curr\_time}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-09-07 06:25:13 PDT"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{curr\_date }\OtherTok{=} \FunctionTok{as.Date}\NormalTok{(curr\_time)}
+\NormalTok{curr\_date }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-09-07"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# get Objects}
+\NormalTok{datetObject }\OtherTok{=} \FunctionTok{as.POSIXct}\NormalTok{(curr\_date)}
+\NormalTok{datetObject}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-09-06 17:00:00 PDT"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{timeObject }\OtherTok{=} \FunctionTok{as.POSIXlt}\NormalTok{(curr\_time)}
+\FunctionTok{names}\NormalTok{(}\FunctionTok{unclass}\NormalTok{(timeObject))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "sec"    "min"    "hour"   "mday"   "mon"    "year"   "wday"   "yday"  
+##  [9] "isdst"  "zone"   "gmtoff"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#get attributes}
+\FunctionTok{print}\NormalTok{(timeObject}\SpecialCharTok{$}\NormalTok{wday)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(timeObject}\SpecialCharTok{$}\NormalTok{year)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 122
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(timeObject}\SpecialCharTok{$}\NormalTok{sec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 13.98435
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(timeObject}\SpecialCharTok{$}\NormalTok{hour)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2-3}{%
+\subsubsection{Question 2}\label{question-2-3}}
+
+\textbf{Create a variable to store current date/time}\\
+1. Create another variable that stores and set the timezone as GMT-5\\
+2. Find the difference between your current time and the GMT-5 timezone.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dateWithTimeZOne }\OtherTok{=} \FunctionTok{as.POSIXlt}\NormalTok{(}\FunctionTok{Sys.time}\NormalTok{(),}\AttributeTok{tz=}\StringTok{"GMT{-}5"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in as.POSIXlt.POSIXct(Sys.time(), tz = "GMT-5"): unknown timezone
+## 'GMT-5'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Print time for both time zones}
+\NormalTok{timeObject}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-09-07 06:25:13 PDT"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dateWithTimeZOne}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-09-07 18:25:14 GMT"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# difference}
+\NormalTok{difference }\OtherTok{=}\NormalTok{ timeObject }\SpecialCharTok{{-}}\NormalTok{ dateWithTimeZOne}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in as.POSIXct.POSIXlt(time2): unknown timezone 'GMT-5'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{difference}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Time difference of -0.120754 secs
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{good-job-you-have-successfully-completed-the-section-4}{%
+\subsubsection{Good Job! You have successfully completed the
+section!}\label{good-job-you-have-successfully-completed-the-section-4}}
+
+\hypertarget{section-6-loop-functions}{%
+\subsection{Section 6: Loop Functions}\label{section-6-loop-functions}}
+
+\hypertarget{question-1-5}{%
+\subsubsection{Question 1}\label{question-1-5}}
+
+\textbf{Create a function to calculate mean and standard deviation of
+the provided data} 1. Create a sequence of numbers from 100 to 150 store
+in a variable called numbers. 1. Use lapply, sapply, apply and tapply to
+implement the functions on ``numbers'' {[}only on the second half of the
+sequence for tapply{]}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{calculateMSD }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(data) }\FunctionTok{c}\NormalTok{(}\AttributeTok{mean=}\FunctionTok{mean}\NormalTok{(data),}\AttributeTok{standard\_deviation =}\FunctionTok{sd}\NormalTok{(data))}
+\CommentTok{\# data}
+\NormalTok{numbers }\OtherTok{=} \DecValTok{100}\SpecialCharTok{:}\DecValTok{150}
+
+\CommentTok{\# lapply returned list}
+\FunctionTok{lapply}\NormalTok{(}\FunctionTok{list}\NormalTok{(numbers),calculateMSD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+##               mean standard_deviation 
+##          125.00000           14.86607
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#sapply returned data (matrix,array)}
+\FunctionTok{sapply}\NormalTok{(}\FunctionTok{list}\NormalTok{(numbers),calculateMSD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                         [,1]
+## mean               125.00000
+## standard_deviation  14.86607
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# apply work on array or matrix, returned (matrix,array)}
+\FunctionTok{apply}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(numbers,}\DecValTok{1}\NormalTok{,}\DecValTok{51}\NormalTok{),}\AttributeTok{MARGIN =}  \DecValTok{1}\NormalTok{,}\AttributeTok{FUN =}\NormalTok{ calculateMSD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                         [,1]
+## mean               125.00000
+## standard_deviation  14.86607
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# tapply works on ragged array {-}{-} vector returned array}
+\CommentTok{\# create a factor of same length as of data : for indexing}
+\NormalTok{f }\OtherTok{=} \FunctionTok{gl}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\FunctionTok{tapply}\NormalTok{(numbers[}\DecValTok{26}\SpecialCharTok{:}\DecValTok{50}\NormalTok{], f, calculateMSD)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $`1`
+##               mean standard_deviation 
+##         127.000000           1.581139 
+## 
+## $`2`
+##               mean standard_deviation 
+##         132.000000           1.581139 
+## 
+## $`3`
+##               mean standard_deviation 
+##         137.000000           1.581139 
+## 
+## $`4`
+##               mean standard_deviation 
+##         142.000000           1.581139 
+## 
+## $`5`
+##               mean standard_deviation 
+##         147.000000           1.581139
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# printed mean with indexing of 5 and standard deviation with levels 5}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2-4}{%
+\subsubsection{Question 2}\label{question-2-4}}
+
+\textbf{Create a matrix of dimensions 4x4} 1. Find the row-wise and
+column-wise mean of the matrix. 2. Print the values.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matrix\_4 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{21}\SpecialCharTok{:}\DecValTok{36}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{matrix\_4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]   21   25   29   33
+## [2,]   22   26   30   34
+## [3,]   23   27   31   35
+## [4,]   24   28   32   36
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rm }\OtherTok{=} \FunctionTok{rowMeans}\NormalTok{(matrix\_4)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Row Means:"}\NormalTok{,rm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Row Means: 27 28 29 30
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cm }\OtherTok{=} \FunctionTok{colMeans}\NormalTok{(matrix\_4)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Column Means:"}\NormalTok{,cm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Column Means: 22.5 26.5 30.5 34.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{good-job-you-have-successfully-completed-the-section-5}{%
+\subsubsection{Good Job! You have successfully completed the
+section!}\label{good-job-you-have-successfully-completed-the-section-5}}
+
+\hypertarget{section-7-data-split}{%
+\subsection{Section 7: Data Split}\label{section-7-data-split}}
+
+\hypertarget{question-1-6}{%
+\subsubsection{Question 1}\label{question-1-6}}
+
+\textbf{Using the data frame Orange:}\\
+1. Using split function to break down the dataset on circumference and
+store it in `split\_data' variable.\\
+2. Print the values for split\_data where circumference is 30 and 75.\\
+3. Find the average age of the tree when the circumference is 30 and
+when circumference is 214.
+
+The dataset is loaded and the variable Orange contains the respective
+dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(datasets)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(Orange)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Tree  age circumference
+## 1    1  118            30
+## 2    1  484            58
+## 3    1  664            87
+## 4    1 1004           115
+## 5    1 1231           120
+## 6    1 1372           142
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# Start solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{split\_data }\OtherTok{=} \FunctionTok{split}\NormalTok{(Orange,Orange}\SpecialCharTok{$}\NormalTok{circumference)}
+\CommentTok{\#class(split\_data)}
+\CommentTok{\#names(unclass(split\_data))}
+
+\CommentTok{\# Data for 30}
+\NormalTok{split\_data}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{30}\StringTok{\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Tree age circumference
+## 1     1 118            30
+## 15    3 118            30
+## 29    5 118            30
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data for 75}
+\NormalTok{split\_data}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{75}\StringTok{\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Tree age circumference
+## 17    3 664            75
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#average age for 30}
+\NormalTok{data1 }\OtherTok{\textless{}{-}}\NormalTok{ split\_data}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{30}\StringTok{\textasciigrave{}}
+\NormalTok{dataWithAge1 }\OtherTok{=} \FunctionTok{list}\NormalTok{(data1}\SpecialCharTok{$}\NormalTok{age)}
+
+\NormalTok{age1Mean }\OtherTok{=}\FunctionTok{sapply}\NormalTok{(dataWithAge1, mean)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Average age for 30:"}\NormalTok{,age1Mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Average age for 30: 118
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# average age for 214}
+\NormalTok{data2 }\OtherTok{\textless{}{-}}\NormalTok{ split\_data}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{214}\StringTok{\textasciigrave{}}
+\NormalTok{dataWithAge2 }\OtherTok{=} \FunctionTok{list}\NormalTok{(data2}\SpecialCharTok{$}\NormalTok{age)}
+
+\NormalTok{age2Mean }\OtherTok{=}\FunctionTok{sapply}\NormalTok{(dataWithAge2, mean)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Average age for 214:"}\NormalTok{,age2Mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Average age for 214: 1582
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\# End solution \#\#\#\#}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{save-it-and-push-.rmd-and-.html-file-to-your-github-repository}{%
+\subsubsection{Save it and push .Rmd and .html file to your Github
+Repository}\label{save-it-and-push-.rmd-and-.html-file-to-your-github-repository}}
+
+\hypertarget{good-job-you-have-successfully-finished-the-course}{%
+\subsection{GOOD JOB! You have successfully finished the
+course!}\label{good-job-you-have-successfully-finished-the-course}}
+
+\end{document}

@@ -9,9 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Sana Rasheed" />
+<meta name="author" content="AHMAD RAZA" />
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2022-09-14" />
 
 <title>Introduction to R Programming</title>
 
@@ -364,8 +364,8 @@ pre code {
 
 
 <h1 class="title toc-ignore">Introduction to R Programming</h1>
-<h4 class="author">Sana Rasheed</h4>
-<h4 class="date">May 14, 2020</h4>
+<h4 class="author">AHMAD RAZA</h4>
+<h4 class="date">September 14, 2022</h4>
 
 </div>
 
@@ -393,7 +393,30 @@ created in (1)<br />
 4. Create a matrix of 3x3 dimensions that contains the even sequence of
 numbers starting from 2.<br />
 5. Assign names to the variables.</p>
-<pre class="r"><code>vector1 &lt;- c(&quot;a&quot;,&quot;h&quot;,&quot;m&quot;,&quot;a&quot;,&quot;d&quot;)</code></pre>
+<pre class="r"><code>vector1 &lt;- c(&quot;a&quot;,&quot;h&quot;,&quot;m&quot;,&quot;a&quot;,&quot;d&quot;)
+print(vector1)</code></pre>
+<pre><code>## [1] &quot;a&quot; &quot;h&quot; &quot;m&quot; &quot;a&quot; &quot;d&quot;</code></pre>
+<pre class="r"><code>name = paste(vector1,collapse = &quot;&quot;)
+print(name)</code></pre>
+<pre><code>## [1] &quot;ahmad&quot;</code></pre>
+<pre class="r"><code>var1 &lt;- 100:120
+print(var1)</code></pre>
+<pre><code>##  [1] 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118
+## [20] 119 120</code></pre>
+<pre class="r"><code>numbers &lt;- seq(from = 2, to = 18, by = 2)
+mat1 = matrix(numbers,nrow = 3,ncol=3)
+print(mat1)</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    2    8   14
+## [2,]    4   10   16
+## [3,]    6   12   18</code></pre>
+<pre class="r"><code>row.names(mat1) &lt;- c(&quot;r1&quot;,&quot;r2&quot;,&quot;r3&quot;)
+colnames(mat1) &lt;- c(&quot;c1&quot;,&quot;c2&quot;,&quot;c3&quot;)
+print(mat1)</code></pre>
+<pre><code>##    c1 c2 c3
+## r1  2  8 14
+## r2  4 10 16
+## r3  6 12 18</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="question-2" class="section level3">
@@ -404,6 +427,19 @@ Self-Employed, with each level appearing atleast more than 2.<br />
 2. Display the levels and the factor variable as a table.<br />
 3. Unclass the elements of the factor variable.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>emp_status &lt;- factor(c(&quot;Employed&quot;,&quot;Employed&quot;,&quot;Unemployed&quot;,&quot;Self-Employed&quot;,&quot;Unemployed&quot;,&quot;Employed&quot;,&quot;Unemployed&quot;,&quot;Self-Employed&quot;,&quot;Self-Employed&quot;),levels = c(&quot;Employed&quot;,&quot;Unemployed&quot;,&quot;Self-Employed&quot;))
+print(emp_status)</code></pre>
+<pre><code>## [1] Employed      Employed      Unemployed    Self-Employed Unemployed   
+## [6] Employed      Unemployed    Self-Employed Self-Employed
+## Levels: Employed Unemployed Self-Employed</code></pre>
+<pre class="r"><code>table(emp_status)</code></pre>
+<pre><code>## emp_status
+##      Employed    Unemployed Self-Employed 
+##             3             3             3</code></pre>
+<pre class="r"><code>unclass(emp_status)</code></pre>
+<pre><code>## [1] 1 1 2 3 2 1 2 3 3
+## attr(,&quot;levels&quot;)
+## [1] &quot;Employed&quot;      &quot;Unemployed&quot;    &quot;Self-Employed&quot;</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="question-3" class="section level3">
@@ -423,6 +459,29 @@ e. Diane is here for information.<br />
 3. For customers that do not have a value, use NA as placeholder.<br />
 4. Print the number of rows, columns and names for the data frame.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>bank_customers &lt;- data.frame(CustomerID=101:105,hasAccount=c(FALSE,TRUE,TRUE,TRUE,NA),totalBalance= c(NA,10000,0,2000,NA))
+
+row.names(bank_customers)&lt;-c(&quot;Alicia&quot;,&quot;Nancy&quot;,&quot;Fernando&quot;,&quot;Louis&quot;,&quot;Diane&quot;)
+print(bank_customers)</code></pre>
+<pre><code>##          CustomerID hasAccount totalBalance
+## Alicia          101      FALSE           NA
+## Nancy           102       TRUE        10000
+## Fernando        103       TRUE            0
+## Louis           104       TRUE         2000
+## Diane           105         NA           NA</code></pre>
+<pre class="r"><code>#new record added
+#newEmployee &lt;- data.frame(CustomerID=106,hasAccount=TRUE,totalBalance=500)
+#rbind(bank_customers,newEmployee)</code></pre>
+<pre class="r"><code>nrow(bank_customers)</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>ncol(bank_customers)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>dimnames(bank_customers)</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;Alicia&quot;   &quot;Nancy&quot;    &quot;Fernando&quot; &quot;Louis&quot;    &quot;Diane&quot;   
+## 
+## [[2]]
+## [1] &quot;CustomerID&quot;   &quot;hasAccount&quot;   &quot;totalBalance&quot;</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="good-job-you-have-successfully-completed-the-section" class="section level3">
@@ -443,6 +502,63 @@ iteration.<br />
 2. When you reach the 10th prime number, terminate the loop and print
 the number.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code># Question 1(a)
+getPrimeNumbers &lt;- function(var2){
+     
+   primeMarker= TRUE  
+   var3 &lt;- c()
+   for (x in var2){
+     if(x == 1){
+          var3 &lt;- c(var3,x)
+          next
+     }
+     for (y in var2){
+          if(y == 1)next
+          else if(x == y)next
+          
+          if ( x %% y == 0){
+               primeMarker = FALSE
+               break}
+          else {
+               primeMarker= TRUE
+               
+          }
+          
+     } 
+     
+     if(primeMarker == TRUE){
+          # vector concatenation
+          var3 &lt;- c(var3,x)
+          primeMarker == FALSE
+     }
+   }
+   var3
+}
+var2 &lt;- 1:100
+result = getPrimeNumbers(var2)
+cat(&quot;Prime Numbers are: &quot;,result)</code></pre>
+<pre><code>## Prime Numbers are:  1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97</code></pre>
+<pre class="r"><code># Question 1 (b)
+getithPrimeNumber &lt;- function(var,check){
+     while(TRUE){
+          primeNumbers = getPrimeNumbers(seq(1:var))
+          length = length(primeNumbers)
+          if(length == check){
+               break
+          }
+          var = var + 1
+     
+     }
+     # return 
+     primeNumbers[length]
+}
+
+# Use Custom Function
+var = 1
+check = 10
+result = getithPrimeNumber(var,check)
+cat(check,&quot;th Prime Number is:&quot;,result,sep = &quot;&quot;)</code></pre>
+<pre><code>## 10th Prime Number is:23</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="question-2-1" class="section level3">
@@ -451,6 +567,23 @@ the number.</p>
 1. Iterate over all the values one by one and print the element as well
 as the position in the matrix (row, col)</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code># Create Matrix 3x3
+mat_1 = matrix(1:9,3,3)</code></pre>
+<pre class="r"><code># print matrix by elements
+for (i in seq_len(nrow(mat_1))){
+     for(j in seq_len(ncol(mat_1))){
+          cat(&quot;Element at Position (&quot;,i,&quot;,&quot;,j,&quot;) is :&quot;,mat_1[i,j],&quot;\n&quot;)
+     }
+}</code></pre>
+<pre><code>## Element at Position ( 1 , 1 ) is : 1 
+## Element at Position ( 1 , 2 ) is : 4 
+## Element at Position ( 1 , 3 ) is : 7 
+## Element at Position ( 2 , 1 ) is : 2 
+## Element at Position ( 2 , 2 ) is : 5 
+## Element at Position ( 2 , 3 ) is : 8 
+## Element at Position ( 3 , 1 ) is : 3 
+## Element at Position ( 3 , 2 ) is : 6 
+## Element at Position ( 3 , 3 ) is : 9</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="good-job-you-have-successfully-completed-the-section-1" class="section level3">
@@ -467,6 +600,23 @@ divisor of two numbers a and b:</strong><br />
 2. The function must print the GCD as well as return it.<br />
 3. The output must be saved in a variable called answer.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>gcd &lt;- function(a,b){
+     if(a&lt;b) smaller = a    
+     else smaller = b
+
+     for (i in 1:smaller) {
+          if((a %% i == 0) &amp;&amp; (b %% i == 0)){
+               hcf = i
+          }
+     }
+     
+     cat(&quot;Greatest Common Divisor:&quot;,hcf)
+     return(hcf)
+}
+num1 = 72
+num2 = 120
+answer = gcd(num2,num1)</code></pre>
+<pre><code>## Greatest Common Divisor: 24</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="question-2-2" class="section level3">
@@ -479,6 +629,24 @@ True.<br />
 3. The function must returns a boolean value.<br />
 4. Using a method, print the arguments that function takes.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>allConditionsMeet &lt;- function(a,b){
+
+     if((a == TRUE)&amp;&amp;(b==TRUE)){
+          return(TRUE)
+     }
+}
+exp1 = 2 &lt; 5
+exp2 = 5 &gt;= 0
+result = allConditionsMeet(exp1,exp2)
+cat(&quot;Result is:&quot;,result,&quot;\n&quot;)</code></pre>
+<pre><code>## Result is: TRUE</code></pre>
+<pre class="r"><code>print(&quot;Arguments:&quot;)</code></pre>
+<pre><code>## [1] &quot;Arguments:&quot;</code></pre>
+<pre class="r"><code>print(formals(allConditionsMeet))</code></pre>
+<pre><code>## $a
+## 
+## 
+## $b</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="good-job-you-have-successfully-completed-the-section-2" class="section level3">
@@ -496,6 +664,49 @@ and 3x2:</strong><br />
 <p><strong>Create a 2x2 matrix my_mat:</strong><br />
 1. Write a function to find the determinant of the matrix.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>#Create Matrices
+matrix_1 &lt;- matrix(1:6,2,3)
+matrix_2 &lt;- matrix(1:6,3,2)
+matrix_1</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+<pre class="r"><code>matrix_2</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6</code></pre>
+<pre class="r"><code># element-wise multiplication
+#elements = c()
+#for (i in seq_len(nrow(matrix_1))){
+#     a = c(matrix_1[i,]) * c(matrix_2[i,])
+#     elements &lt;- c(elements,a)
+#}
+#elementWiseMultiplication = matrix(elements,2,3)
+#elementWiseMultiplication
+
+# approach 2:
+element_mat = c(matrix_1) * c(matrix_2)
+print(matrix(element_mat,2,3))</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    9   25
+## [2,]    4   16   36</code></pre>
+<pre class="r"><code># approach 3:
+#print(&quot;Element Wise Multiplication: &quot;,matrix_1 * matrix_2)</code></pre>
+<pre class="r"><code># matrix multiplication
+matrixMultiplication = matrix_1 %*% matrix_2
+matrixMultiplication</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]   22   49
+## [2,]   28   64</code></pre>
+<pre class="r"><code># determinant of matrix
+matrix_3 = matrix(5:8,2,2)
+matrix_3</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    5    7
+## [2,]    6    8</code></pre>
+<pre class="r"><code>print(det(matrix_3))</code></pre>
+<pre><code>## [1] -2</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="good-job-you-have-successfully-completed-the-section-3" class="section level3">
@@ -513,6 +724,30 @@ functions.<br />
 2. Print the weekday, year, second and hour using the appropriate
 function and variables.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code># get date &amp; time
+curr_time = Sys.time()
+curr_time</code></pre>
+<pre><code>## [1] &quot;2022-09-07 06:23:47 PDT&quot;</code></pre>
+<pre class="r"><code>curr_date = as.Date(curr_time)
+curr_date </code></pre>
+<pre><code>## [1] &quot;2022-09-07&quot;</code></pre>
+<pre class="r"><code># get Objects
+datetObject = as.POSIXct(curr_date)
+datetObject</code></pre>
+<pre><code>## [1] &quot;2022-09-06 17:00:00 PDT&quot;</code></pre>
+<pre class="r"><code>timeObject = as.POSIXlt(curr_time)
+names(unclass(timeObject))</code></pre>
+<pre><code>##  [1] &quot;sec&quot;    &quot;min&quot;    &quot;hour&quot;   &quot;mday&quot;   &quot;mon&quot;    &quot;year&quot;   &quot;wday&quot;   &quot;yday&quot;  
+##  [9] &quot;isdst&quot;  &quot;zone&quot;   &quot;gmtoff&quot;</code></pre>
+<pre class="r"><code>#get attributes
+print(timeObject$wday)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>print(timeObject$year)</code></pre>
+<pre><code>## [1] 122</code></pre>
+<pre class="r"><code>print(timeObject$sec)</code></pre>
+<pre><code>## [1] 47.43193</code></pre>
+<pre class="r"><code>print(timeObject$hour)</code></pre>
+<pre><code>## [1] 6</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="question-2-3" class="section level3">
@@ -523,6 +758,19 @@ GMT-5<br />
 2. Find the difference between your current time and the GMT-5
 timezone.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>dateWithTimeZOne = as.POSIXlt(Sys.time(),tz=&quot;GMT-5&quot;)</code></pre>
+<pre><code>## Warning in as.POSIXlt.POSIXct(Sys.time(), tz = &quot;GMT-5&quot;): unknown timezone
+## &#39;GMT-5&#39;</code></pre>
+<pre class="r"><code># Print time for both time zones
+timeObject</code></pre>
+<pre><code>## [1] &quot;2022-09-07 06:23:47 PDT&quot;</code></pre>
+<pre class="r"><code>dateWithTimeZOne</code></pre>
+<pre><code>## [1] &quot;2022-09-07 18:23:47 GMT&quot;</code></pre>
+<pre class="r"><code># difference
+difference = timeObject - dateWithTimeZOne</code></pre>
+<pre><code>## Warning in as.POSIXct.POSIXlt(time2): unknown timezone &#39;GMT-5&#39;</code></pre>
+<pre class="r"><code>difference</code></pre>
+<pre><code>## Time difference of -0.3314409 secs</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="good-job-you-have-successfully-completed-the-section-4" class="section level3">
@@ -539,6 +787,49 @@ the provided data</strong> 1. Create a sequence of numbers from 100 to
 tapply to implement the functions on “numbers” [only on the second half
 of the sequence for tapply]</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>calculateMSD &lt;- function(data) c(mean=mean(data),standard_deviation =sd(data))
+# data
+numbers = 100:150
+
+# lapply returned list
+lapply(list(numbers),calculateMSD)</code></pre>
+<pre><code>## [[1]]
+##               mean standard_deviation 
+##          125.00000           14.86607</code></pre>
+<pre class="r"><code>#sapply returned data (matrix,array)
+sapply(list(numbers),calculateMSD)</code></pre>
+<pre><code>##                         [,1]
+## mean               125.00000
+## standard_deviation  14.86607</code></pre>
+<pre class="r"><code># apply work on array or matrix, returned (matrix,array)
+apply(matrix(numbers,1,51),MARGIN =  1,FUN = calculateMSD)</code></pre>
+<pre><code>##                         [,1]
+## mean               125.00000
+## standard_deviation  14.86607</code></pre>
+<pre class="r"><code># tapply works on ragged array -- vector returned array
+# create a factor of same length as of data : for indexing
+f = gl(5,5)
+tapply(numbers[26:50], f, calculateMSD)</code></pre>
+<pre><code>## $`1`
+##               mean standard_deviation 
+##         127.000000           1.581139 
+## 
+## $`2`
+##               mean standard_deviation 
+##         132.000000           1.581139 
+## 
+## $`3`
+##               mean standard_deviation 
+##         137.000000           1.581139 
+## 
+## $`4`
+##               mean standard_deviation 
+##         142.000000           1.581139 
+## 
+## $`5`
+##               mean standard_deviation 
+##         147.000000           1.581139</code></pre>
+<pre class="r"><code># printed mean with indexing of 5 and standard deviation with levels 5</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="question-2-4" class="section level3">
@@ -546,6 +837,19 @@ of the sequence for tapply]</p>
 <p><strong>Create a matrix of dimensions 4x4</strong> 1. Find the
 row-wise and column-wise mean of the matrix. 2. Print the values.</p>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>matrix_4 &lt;- matrix(21:36,4,4)
+matrix_4</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]   21   25   29   33
+## [2,]   22   26   30   34
+## [3,]   23   27   31   35
+## [4,]   24   28   32   36</code></pre>
+<pre class="r"><code>rm = rowMeans(matrix_4)
+cat(&quot;Row Means:&quot;,rm)</code></pre>
+<pre><code>## Row Means: 27 28 29 30</code></pre>
+<pre class="r"><code>cm = colMeans(matrix_4)
+cat(&quot;Column Means:&quot;,cm)</code></pre>
+<pre><code>## Column Means: 22.5 26.5 30.5 34.5</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="good-job-you-have-successfully-completed-the-section-5" class="section level3">
@@ -575,6 +879,34 @@ dataset.</p>
 ## 5    1 1231           120
 ## 6    1 1372           142</code></pre>
 <pre class="r"><code>#### Start solution ####</code></pre>
+<pre class="r"><code>split_data = split(Orange,Orange$circumference)
+#class(split_data)
+#names(unclass(split_data))
+
+# Data for 30
+split_data$`30`</code></pre>
+<pre><code>##    Tree age circumference
+## 1     1 118            30
+## 15    3 118            30
+## 29    5 118            30</code></pre>
+<pre class="r"><code># Data for 75
+split_data$`75`</code></pre>
+<pre><code>##    Tree age circumference
+## 17    3 664            75</code></pre>
+<pre class="r"><code>#average age for 30
+data1 &lt;- split_data$`30`
+dataWithAge1 = list(data1$age)
+
+age1Mean =sapply(dataWithAge1, mean)
+cat(&quot;Average age for 30:&quot;,age1Mean)</code></pre>
+<pre><code>## Average age for 30: 118</code></pre>
+<pre class="r"><code># average age for 214
+data2 &lt;- split_data$`214`
+dataWithAge2 = list(data2$age)
+
+age2Mean =sapply(dataWithAge2, mean)
+cat(&quot;Average age for 214:&quot;,age2Mean)</code></pre>
+<pre><code>## Average age for 214: 1582</code></pre>
 <pre class="r"><code>#### End solution ####</code></pre>
 </div>
 <div id="save-it-and-push-.rmd-and-.html-file-to-your-github-repository" class="section level3">

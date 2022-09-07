@@ -1,8 +1,11 @@
 ---
 title: "Introduction to R Programming"
-author: "Sana Rasheed"
-date: "May 14, 2020"
-output: html_document
+author: "AHMAD RAZA"
+date: "September 14, 2022"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
 ---
 
 
@@ -110,8 +113,12 @@ unclass(emp_status)
 
 ```{r }
 bank_customers <- data.frame(CustomerID=101:105,hasAccount=c(FALSE,TRUE,TRUE,TRUE,NA),totalBalance= c(NA,10000,0,2000,NA))
+
 row.names(bank_customers)<-c("Alicia","Nancy","Fernando","Louis","Diane")
 print(bank_customers)
+#new record added
+#newEmployee <- data.frame(CustomerID=106,hasAccount=TRUE,totalBalance=500)
+#rbind(bank_customers,newEmployee)
 ```
 
 
@@ -153,28 +160,68 @@ dimnames(bank_customers)
 
 
 ```{r }
-
+# Question 1(a)
+getPrimeNumbers <- function(var2){
+     
+   primeMarker= TRUE  
+   var3 <- c()
+   for (x in var2){
+     if(x == 1){
+          var3 <- c(var3,x)
+          next
+     }
+     for (y in var2){
+          if(y == 1)next
+          else if(x == y)next
+          
+          if ( x %% y == 0){
+               primeMarker = FALSE
+               break}
+          else {
+               primeMarker= TRUE
+               
+          }
+          
+     } 
+     
+     if(primeMarker == TRUE){
+          # vector concatenation
+          var3 <- c(var3,x)
+          primeMarker == FALSE
+     }
+   }
+   var3
+}
+var2 <- 1:100
+result = getPrimeNumbers(var2)
+cat("Prime Numbers are: ",result)
 ```
 
 
 ```{r }
+# Question 1 (b)
+getithPrimeNumber <- function(var,check){
+     while(TRUE){
+          primeNumbers = getPrimeNumbers(seq(1:var))
+          length = length(primeNumbers)
+          if(length == check){
+               break
+          }
+          var = var + 1
+     
+     }
+     # return 
+     primeNumbers[length]
+}
+
+# Use Custom Function
+var = 1
+check = 10
+result = getithPrimeNumber(var,check)
+cat(check,"th Prime Number is:",result,sep = "")
 
 ```
 
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
 
 
 ```{r }
@@ -192,29 +239,19 @@ dimnames(bank_customers)
 
 
 ```{r }
-
+# Create Matrix 3x3
+mat_1 = matrix(1:9,3,3)
 ```
 
 
 ```{r }
-
+# print matrix by elements
+for (i in seq_len(nrow(mat_1))){
+     for(j in seq_len(ncol(mat_1))){
+          cat("Element at Position (",i,",",j,") is :",mat_1[i,j],"\n")
+     }
+}
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
 
 ```{r }
 #### End solution ####
@@ -237,27 +274,22 @@ dimnames(bank_customers)
 
 
 ```{r }
+gcd <- function(a,b){
+     if(a<b) smaller = a    
+     else smaller = b
 
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
+     for (i in 1:smaller) {
+          if((a %% i == 0) && (b %% i == 0)){
+               hcf = i
+          }
+     }
+     
+     cat("Greatest Common Divisor:",hcf)
+     return(hcf)
+}
+num1 = 72
+num2 = 120
+answer = gcd(num2,num1)
 ```
 
 
@@ -279,29 +311,20 @@ dimnames(bank_customers)
 
 
 ```{r }
+allConditionsMeet <- function(a,b){
 
+     if((a == TRUE)&&(b==TRUE)){
+          return(TRUE)
+     }
+}
+exp1 = 2 < 5
+exp2 = 5 >= 0
+result = allConditionsMeet(exp1,exp2)
+cat("Result is:",result,"\n")
+
+print("Arguments:")
+print(formals(allConditionsMeet))
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
 
 ```{r }
 #### End solution ####
@@ -326,30 +349,47 @@ dimnames(bank_customers)
 
 
 ```{r }
-
+#Create Matrices
+matrix_1 <- matrix(1:6,2,3)
+matrix_2 <- matrix(1:6,3,2)
+matrix_1
+matrix_2
 ```
 
 
 ```{r }
+# element-wise multiplication
+#elements = c()
+#for (i in seq_len(nrow(matrix_1))){
+#     a = c(matrix_1[i,]) * c(matrix_2[i,])
+#     elements <- c(elements,a)
+#}
+#elementWiseMultiplication = matrix(elements,2,3)
+#elementWiseMultiplication
 
+# approach 2:
+element_mat = c(matrix_1) * c(matrix_2)
+print(matrix(element_mat,2,3))
+# approach 3:
+#print("Element Wise Multiplication: ",matrix_1 * matrix_2)
+```
+
+
+
+```{r }
+# matrix multiplication
+matrixMultiplication = matrix_1 %*% matrix_2
+matrixMultiplication
 ```
 
 
 ```{r }
+# determinant of matrix
+matrix_3 = matrix(5:8,2,2)
+matrix_3
+print(det(matrix_3))
 
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
 ```{r }
 #### End solution ####
 ```
@@ -370,29 +410,32 @@ dimnames(bank_customers)
 
 
 ```{r }
+# get date & time
+curr_time = Sys.time()
+curr_time
 
+curr_date = as.Date(curr_time)
+curr_date 
 ```
 
 
 ```{r }
+# get Objects
+datetObject = as.POSIXct(curr_date)
+datetObject
 
+timeObject = as.POSIXlt(curr_time)
+names(unclass(timeObject))
 ```
 
 
 ```{r }
-
+#get attributes
+print(timeObject$wday)
+print(timeObject$year)
+print(timeObject$sec)
+print(timeObject$hour)
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
 
 ```{r }
 #### End solution ####
@@ -410,29 +453,15 @@ dimnames(bank_customers)
 
 
 ```{r }
+dateWithTimeZOne = as.POSIXlt(Sys.time(),tz="GMT-5")
+# Print time for both time zones
+timeObject
+dateWithTimeZOne
 
+# difference
+difference = timeObject - dateWithTimeZOne
+difference
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
 
 ```{r }
 #### End solution ####
@@ -454,29 +483,35 @@ dimnames(bank_customers)
 
 
 ```{r }
+calculateMSD <- function(data) c(mean=mean(data),standard_deviation =sd(data))
+# data
+numbers = 100:150
 
+# lapply returned list
+lapply(list(numbers),calculateMSD)
 ```
 
 
 ```{r }
-
+#sapply returned data (matrix,array)
+sapply(list(numbers),calculateMSD)
 ```
 
 
 ```{r }
-
+# apply work on array or matrix, returned (matrix,array)
+apply(matrix(numbers,1,51),MARGIN =  1,FUN = calculateMSD)
 ```
 
 
 ```{r }
+# tapply works on ragged array -- vector returned array
+# create a factor of same length as of data : for indexing
+f = gl(5,5)
+tapply(numbers[26:50], f, calculateMSD)
+# printed mean with indexing of 5 and standard deviation with levels 5
 
 ```
-
-
-```{r }
-
-```
-
 
 ```{r }
 #### End solution ####
@@ -494,27 +529,20 @@ dimnames(bank_customers)
 
 
 ```{r }
-
+matrix_4 <- matrix(21:36,4,4)
+matrix_4
 ```
 
 
 ```{r }
-
+rm = rowMeans(matrix_4)
+cat("Row Means:",rm)
 ```
 
 
 ```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
+cm = colMeans(matrix_4)
+cat("Column Means:",cm)
 ```
 
 
@@ -552,27 +580,38 @@ head(Orange)
 
 
 ```{r }
+split_data = split(Orange,Orange$circumference)
+#class(split_data)
+#names(unclass(split_data))
 
+# Data for 30
+split_data$`30`
 ```
 
 
 ```{r }
-
+# Data for 75
+split_data$`75`
 ```
 
 
 ```{r }
+#average age for 30
+data1 <- split_data$`30`
+dataWithAge1 = list(data1$age)
 
+age1Mean =sapply(dataWithAge1, mean)
+cat("Average age for 30:",age1Mean)
 ```
 
 
 ```{r }
+# average age for 214
+data2 <- split_data$`214`
+dataWithAge2 = list(data2$age)
 
-```
-
-
-```{r }
-
+age2Mean =sapply(dataWithAge2, mean)
+cat("Average age for 214:",age2Mean)
 ```
 
 
