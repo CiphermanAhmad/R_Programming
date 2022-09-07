@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R Programming"
 author: "AHMAD RAZA"
-date: "September 7, 2022"
+date: "September7, 2022"
 output:
   pdf_document: default
   html_document: default
